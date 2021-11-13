@@ -6,4 +6,4 @@ How to run the project for the first time:
 
 # Subsequent Runs:
 -$ source mohanad/bin/activate
--$ python bst.py
+-$ python tests.py

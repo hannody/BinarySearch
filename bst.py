@@ -1,9 +1,32 @@
-import numpy as np
+class BinarySearchTree:
+	"""
+	Binary Search Tree
+	"""
+	def is_sorted(arr):
+		"""
+		Check if an array is sorted.
+		:param arr: array
+		:return: boolean
+		"""
+		return all(arr[i] <= arr[i + 1] for i in range(len(arr) - 1))
 
-print("Print the index where No. 3 is located at:", np.searchsorted([1,2,3,4,5], 3))
-
-print("Print the index of the 'Gamma'" ,np.searchsorted(['Alpha', 'Beta', 'Delta', 'Gamma'], 'Gamma'))
-
-
-if __name__=='__main__':
-	print('bst.py is being run directly')
+	@staticmethod
+	def binary_search(arr, target):
+		"""
+		Implement binary search on a sorted array.
+		:param arr: sorted array
+		:param target: target value
+		:return: index of target value
+		"""
+		if BinarySearchTree.is_sorted(arr):
+			left = 0
+			right = len(arr) - 1
+			while left <= right:
+				mid = (left + right) // 2
+				if arr[mid] == target:
+					return mid
+				elif arr[mid] < target:
+					left = mid + 1
+				else:
+					right = mid - 1
+		return -1

@@ -2,7 +2,8 @@ class BinarySearchTree:
 	"""
 	Binary Search Tree
 	"""
-	def is_sorted(arr):
+	@staticmethod
+	def _is_sorted(arr) -> bool:
 		"""
 		Check if an array is sorted.
 		:param arr: array
@@ -18,7 +19,7 @@ class BinarySearchTree:
 		:param target: target value
 		:return: index of target value
 		"""
-		if BinarySearchTree.is_sorted(arr):
+		if BinarySearchTree._is_sorted(arr):
 			left = 0
 			right = len(arr) - 1
 			while left <= right:
